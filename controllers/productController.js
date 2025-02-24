@@ -1,5 +1,6 @@
 const pool = require("../config/db");
 
+// getall
 const getProducts = async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM products");
@@ -10,6 +11,7 @@ const getProducts = async (req, res) => {
   }
 };
 
+// getbyId
 const getProductById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -28,6 +30,8 @@ const getProductById = async (req, res) => {
   }
 };
 
+// create new
+
 const createProduct = async (req, res) => {
   try {
     const { title, image, price, offerPrice } = req.body;
@@ -43,6 +47,7 @@ const createProduct = async (req, res) => {
   }
 };
 
+// update
 const updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
@@ -63,7 +68,7 @@ const updateProduct = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
+//  delete
 const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
