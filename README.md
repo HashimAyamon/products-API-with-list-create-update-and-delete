@@ -1,6 +1,5 @@
-Node.js & PostgreSQL Products API
-This is a simple REST API built with Node.js and PostgreSQL that provides CRUD operations for products and user authentication (signup & login) using JWT.
-
+Node.js & PostgreSQL Products API and user login and signup
+Node With Postgress..products API with list, create, update and delete(CRUD)and user authentication (signup & login)
 Features
 ................
 User Authentication
