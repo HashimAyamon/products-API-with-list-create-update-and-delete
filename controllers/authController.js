@@ -7,7 +7,10 @@ const signup = async (req, res) => {
     const { first_name, last_name, email, password } = req.body;
 
     // Check if user already exists
-    const userExists = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+    const userExists = await pool.query(
+      "SELECT * FROM users WHERE email = $1",
+      [email]
+    );
     if (userExists.rows.length > 0) {
       return res.status(400).json({ error: "User already exists" });
     }
@@ -21,7 +24,9 @@ const signup = async (req, res) => {
       [first_name, last_name, email, hashedPassword]
     );
 
-    res.status(201).json({ message: "User registered successfully", user: newUser.rows[0] });
+    res
+      .status(201)
+      .json({ message: "User registered successfully", user: newUser.rows[0] });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -33,7 +38,9 @@ const login = async (req, res) => {
     const { email, password } = req.body;
 
     // Check if user exists
-    const user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+    const user = await pool.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
     if (user.rows.length === 0) {
       return res.status(400).json({ error: "Invalid email or password" });
     }
