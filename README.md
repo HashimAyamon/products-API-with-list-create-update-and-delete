@@ -5,7 +5,6 @@ This is a **Node.js** and **PostgreSQL** based RESTful API for managing products
 ---
 
 ## ✨ Features
-
 - 🔐 **User Authentication**
   - Signup and Login functionality using JWT
   - Passwords hashed securely using bcrypt
