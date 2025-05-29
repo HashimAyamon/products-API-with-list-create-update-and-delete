@@ -2,7 +2,7 @@
 
 This is a **Node.js** and **PostgreSQL** based RESTful API for managing products with full **CRUD operations** (Create, Read, Update, Delete), and secure **user authentication** (Signup & Login). This project is ideal for learning or integrating with a full-stack application.
 
----
+--
 
 ## ✨ Features
 - 🔐 **User Authentication**
